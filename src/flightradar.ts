@@ -4,6 +4,7 @@ import Axios from 'axios';
 
 // const $browser = puppeteer.launch({ args: ['--no-sandbox'] });
 
+// TODO: switch to https://uk.flightaware.com/live/flight/EZY8625
 export async function getFlights(flightNumber: string) {
     const fnRes = await getJSON<any>(`https://www.flightradar24.com/v1/search/web/find?query=${flightNumber}&limit=18&type=schedule`);
     const normalisedFlightNumber = (fnRes.results[0] || { id: flightNumber }).id;
@@ -30,10 +31,4 @@ export async function getFlights(flightNumber: string) {
         });
 
     return rows;
-}
-
-function sleep(ms: number) {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, ms);
-    });
 }

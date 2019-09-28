@@ -87,16 +87,19 @@ hr {
 header {
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    padding-right: 50px;
+    justify-content: space-between;
     background: #009688;
 }
+
+/* .header a.header {
+    
+} */
 
 header a {
     margin: 30px 30px;
     color: #fff;
-    text-transform: uppercase;
     text-decoration: none;
+    display:inline-block;
 }
 
 footer {

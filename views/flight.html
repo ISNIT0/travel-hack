@@ -18,9 +18,14 @@
 
 <body>
     <header>
-        <a href="/how-it-works/">How it Works</a>
-        <a href="/about/">About</a>
-        <a href="/api/">API</a>
+        <div class="left">
+            <a href="/">FlightCarbon.com</a>
+        </div>
+        <div class="right" style='padding-right: 50px;'>
+            <a href="/how-it-works/">HOW IT WORKS</a>
+            <a href="/about/">ABOUT</a>
+            <a href="/api/">API</a>
+        </div>
     </header>
     <div>
         <div class="hero row">
@@ -50,6 +55,11 @@
             </div>
             <!-- <div class="error page" style='display:none;'></div> -->
         </div>
+    </div>
+
+    <div class="row center">
+        <span>Find a low-carbon alternative at <a href="https://kiwi.com">kiwi.com</a> and <a
+                href="https://rebellion.earth/">join the rebellion</a></span>
     </div>
 
     <div class="row" style='height:300px;'>
@@ -93,7 +103,8 @@
             map.fitBounds(polyline.getBounds());
 
             const swoopy = L.swoopyArrow([data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng], {
-                color: 'red',
+                // label: flightNumber,
+                color: '#009688',
                 arrowFilled: true,
                 opacity: 1,
                 minZoom: 2,

@@ -32,6 +32,14 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/api', (req, res) => {
+    res.render('api');
+});
+
+app.get('/about', (req, res) => {
+    res.render('about');
+});
+
 app.get('/flight/:flightNumber', asyncHandler(async (req, res) => {
     const flightNumber = req.params.flightNumber.toUpperCase();
     // const data = await calculateCarbon(flightNumber);
@@ -58,6 +66,7 @@ app.get('/api/flight/:flightNumber',
             const data = await calculateCarbon(flightNumber);
             res.send(data);
         } catch (err) {
+            console.error(`Failed on [${flightNumber}]`, err);
             res.status(400).send({ error: `Could not find data for flight ${flightNumber}` });
         }
     })
