@@ -33,8 +33,8 @@ app.get('/', (req, res) => {
 
 app.get('/flight/:flightNumber', asyncHandler(async (req, res) => {
     const flightNumber = req.params.flightNumber;
-    const data = await calcuateCarbon(flightNumber);
-    const renderData: any = { flightNumber, ...data };
+    // const data = await calcuateCarbon(flightNumber);
+    const renderData: any = { flightNumber };
     renderData.rawJSON = JSON.stringify(renderData);
 
     res.render('flight', renderData);
