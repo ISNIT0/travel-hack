@@ -7,23 +7,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flight Carbon Calculator</title>
     <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Taviraj&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>✈️ FlightCarbon.com</h1>
-    <div class="calculator">
-        <form action="#">
-            <input type="text" name="" id="" placeholder="BA7351">
-            <button>submit</button>
-        </form>
+    <header>
+        <a href="/how-it-works/">How it Works</a>
+        <a href="/about/">About</a>
+        <a href="/api/">API</a>
+    </header>
+    <div>
+        <div>
+            <img src="/icon.png" style='width:13em;' alt="">
+        </div>
+        <h1 style="line-height:1em;font-family: 'Taviraj', serif;margin-bottom:5px;font-size: 2.4em;">Find your flight carbon
+            footprint
+        </h1>
+        <div class="form-wrapper">
+            <form action="#">
+                <div class="line">
+                    <input type="text" name="" id="" placeholder="Search by flight number" minlength="4"
+                        onfocus="showDropdown()" onblur="hideDropdown()">
+                    <button><img src="/search.svg" alt="" style='height:50%;'></button>
+                </div>
+                <div class="dropdown" style='max-height:0px;'>
+                    <hr />
+                    <a href="/flight/BA7351">BA7351 LHR - Sao Paolo</a>
+                    <a href="/flight/BA7351">BA7351 LHR - Sao Paolo</a>
+                    <a href="/flight/BA7351">BA7351 LHR - Sao Paolo</a>
+                    <a href="/flight/BA7351">BA7351 LHR - Sao Paolo</a>
+                </div>
+            </form>
+        </div>
     </div>
+    <footer>
+        A project by <a href="https://www.samanthamy.com/">Samantha</a> and <a href="https://simmsreeve.com">Joe</a>
+    </footer>
 
     <script>
+        function showDropdown() {
+            document.querySelector('.dropdown').style['max-height'] = '200px';
+        }
+        function hideDropdown() {
+            document.querySelector('.dropdown').style['max-height'] = '0px';
+        }
         document.querySelector('form').onsubmit = function (ev) {
-            ev.preventDefault();
             const flightNumber = ev.target.querySelector('input').value;
-            location.href = `/flight/${flightNumber}`;
+            if (flightNumber.length > 3) {
+                ev.preventDefault();
+                location.href = `/flight/${flightNumber}`;
+            }
         };
     </script>
 </body>

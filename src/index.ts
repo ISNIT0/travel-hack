@@ -5,6 +5,7 @@ import logger from 'morgan';
 import asyncHandler from 'express-async-handler';
 import { getFlights } from "./flightradar";
 import { getJSON } from "./util";
+import Axios from 'axios';
 
 require('dotenv').config()
 
@@ -33,23 +34,37 @@ app.get('/', (req, res) => {
 
 app.get('/flight/:flightNumber', asyncHandler(async (req, res) => {
     const flightNumber = req.params.flightNumber.toUpperCase();
-    // const data = await calcuateCarbon(flightNumber);
+    // const data = await calculateCarbon(flightNumber);
     const renderData: any = { flightNumber };
     renderData.rawJSON = JSON.stringify(renderData);
 
     res.render('flight', renderData);
 }));
 
-app.get('/api/flight/:flightNumber',
-    asyncHandler(async (req, res, next) => {
-        const flightNumber = req.params.flightNumber;
-        const data = await calcuateCarbon(flightNumber);
+app.get('/api/randomFlightNumber',
+    asyncHandler(async (req, res) => {
+        const resp = await Axios.get('https://uk.flightaware.com/live/flight/random');
+        const redirectedPath = resp.request.path;
+        const randomFlightNumber = redirectedPath.split('/').slice(-1)[0];
 
-        res.send(data);
+        res.send(randomFlightNumber);
     })
 );
 
-async function calcuateCarbon(flightNumber: string) {
+app.get('/api/flight/:flightNumber',
+    asyncHandler(async (req, res, next) => {
+        const flightNumber = req.params.flightNumber;
+        try {
+            const data = await calculateCarbon(flightNumber);
+            res.send(data);
+        } catch (err) {
+            res.status(400).send({ error: `Could not find data for flight ${flightNumber}` });
+        }
+    })
+);
+
+
+async function calculateCarbon(flightNumber: string) {
     const flights = await getFlights(flightNumber);
 
     const pastRows = flights.filter(r => r.scheduled <= Date.now());

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     position: absolute;
@@ -7,9 +11,12 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    color: #333;
-    background: #f2f2f2;
+    color: #1d1d1d;
+    background-color: #96bdad;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card {
@@ -19,4 +26,133 @@ body {
     margin: auto;
     max-width: 500px;
     width: 100%;
+}
+
+form {
+    padding: 0.6em;
+    border-radius: 40px;
+    background: #fff;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+    color: #888888;
+}
+
+.form-wrapper {
+    min-height: 250px;
+    padding: 20px;
+}
+
+form .line {
+    display: flex;
+}
+
+form .line input {
+    width: 70%;
+    background: none;
+    border: none;
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 1.4em;
+    color: #888888;
+    flex: 1 1 auto;
+}
+
+form .line button {
+    background: none;
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+hr {
+    border-width: 0.1px;
+    color: #f2f2f2;
+}
+
+.dropdown {
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.dropdown a {
+    color: #888888;
+    text-decoration: none;
+    display: block;
+    padding: 3px;
+    padding-left: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding-right: 50px;
+    background: #009688;
+}
+
+header a {
+    margin: 30px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+footer {
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+footer a {
+    color:#1d1d1d;
+    font-weight: 500;
+}
+
+.row {
+    display:flex;
+    justify-content: space-around;
+}
+.row.center {
+    justify-content: center;
+}
+.row.center > div {
+    margin:50px;
+}
+
+.hero.row {
+    font-weight:600;
+    text-align:left;
+    font-size:2em;
+}
+
+
+.hero img {
+    height:4.2em;
+    margin-right:10px;
+}
+
+.hero .header {
+    font-size:2.5em;
+}
+
+.row .title {
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.row .value {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.row .img {
+    margin-bottom:10px;
+    height:100px;
+}
+
+.row .img img {
+    height:100px;
 }
