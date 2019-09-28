@@ -13,7 +13,28 @@
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-swoopy"></script>
 
-
+    <!-- Search Engine -->
+    <meta name="description" content="Input your flight number and find out what your flight's carbon footprint is.">
+    <meta name="image" content="https://flightcarbon.com/">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="FlightCarbon">
+    <meta itemprop="description"
+        content="Input your flight number and find out what your flight's carbon footprint is.">
+    <meta itemprop="image" content="https://flightcarbon.com/screenshot2.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FlightCarbon">
+    <meta name="twitter:description" content="Look at the carbon footprint of flight {{flightNumber}}!">
+    <meta name="twitter:site" content="@hack_the_press">
+    <meta name="twitter:creator" content="@hack_the_press">
+    <meta name="twitter:image:src" content="https://flightcarbon.com/screenshot2.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="FlightCarbon">
+    <meta name="og:description" content="Look at the carbon footprint of flight {{flightNumber}}!">
+    <meta name="og:image" content="https://flightcarbon.com/screenshot2.png">
+    <meta name="og:url" content="https://flightcarbon.com/">
+    <meta name="og:site_name" content="Flight Carbon">
+    <meta name="og:type" content="website">
 </head>
 
 <body>
@@ -58,13 +79,25 @@
     </div>
 
     <div class="row center">
-        <span>Find a low-carbon alternative at <a href="https://kiwi.com">kiwi.com</a> and <a
-                href="https://rebellion.earth/">join the rebellion</a></span>
+        <div>
+            <a href="https://kiwi.com" style='color:#000;text-decoration: none;'>
+                <strong>Find a low-carbon alternative at kiwi.com</strong>
+                <br /><br />
+                <img src="/kiwi.png" alt="" style='width:200px;'>
+            </a>
+        </div>
+        <div>
+            <a href="https://rebellion.earth" style='color:#000;text-decoration: none;'>
+                <strong>Join the Rebellion</strong>
+                <br /><br />
+                <img src="/rebellion.png" alt="" style='width:200px;'>
+            </a>
+        </div>
     </div>
 
-    <div class="row" style='height:300px;'>
+    <!-- <div class="row" style='height:300px;'>
         <div id='map' style='width:100%;height:300px;'></div>
-    </div>
+    </div> -->
 
     <footer>
         A project by <a href="https://www.samanthamy.com/">Samantha</a> and <a href="https://simmsreeve.com">Joe</a>
@@ -91,29 +124,29 @@
             document.querySelector('.aircraftEfficiency').textContent = Math.round(data.aircraftFuelBurn * 100) / 100;
 
 
-            const map = L.map('map').setView([51.505, -0.09], 13);
+            // const map = L.map('map').setView([51.505, -0.09], 13);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+            // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
 
-            const latlngs = [
-                [data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng]
-            ];
-            var polyline = L.polyline(latlngs)
-            // zoom the map to the polyline
-            map.fitBounds(polyline.getBounds());
+            // const latlngs = [
+            //     [data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng]
+            // ];
+            // var polyline = L.polyline(latlngs)
+            // // zoom the map to the polyline
+            // map.fitBounds(polyline.getBounds());
 
-            const swoopy = L.swoopyArrow([data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng], {
-                // label: flightNumber,
-                color: '#009688',
-                arrowFilled: true,
-                opacity: 1,
-                minZoom: 2,
-                maxZoom: 10,
-                factor: .6,
-                iconAnchor: [75, 5],
-                iconSize: [85, 16],
-                weight: 4
-            }).addTo(map);
+            // const swoopy = L.swoopyArrow([data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng], {
+            //     // label: flightNumber,
+            //     color: '#009688',
+            //     arrowFilled: true,
+            //     opacity: 1,
+            //     minZoom: 2,
+            //     maxZoom: 10,
+            //     factor: .6,
+            //     iconAnchor: [75, 5],
+            //     iconSize: [85, 16],
+            //     weight: 4
+            // }).addTo(map);
         } catch (err) {
             // document.querySelector('.loading').remove();
             // document.querySelector('.error').textContent = err.message;

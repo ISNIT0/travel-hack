@@ -8,6 +8,35 @@
     <title>Flight Carbon Calculator</title>
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Taviraj&display=swap" rel="stylesheet">
+
+
+
+
+    <!-- Search Engine -->
+    <meta name="description" content="Input your flight number and find out what your flight's carbon footprint is.">
+    <meta name="image" content="https://flightcarbon.com/">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="FlightCarbon">
+    <meta itemprop="description"
+        content="Input your flight number and find out what your flight's carbon footprint is.">
+    <meta itemprop="image" content="https://flightcarbon.com/screenshot1.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FlightCarbon">
+    <meta name="twitter:description"
+        content="Input your flight number and find out what your flight's carbon footprint is.">
+    <meta name="twitter:site" content="@hack_the_press">
+    <meta name="twitter:creator" content="@hack_the_press">
+    <meta name="twitter:image:src" content="https://flightcarbon.com/screenshot1.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="FlightCarbon">
+    <meta name="og:description" content="Input your flight number and find out what your flight's carbon footprint is.">
+    <meta name="og:image" content="https://flightcarbon.com/screenshot1.png">
+    <meta name="og:url" content="https://flightcarbon.com/">
+    <meta name="og:site_name" content="Flight Carbon">
+    <meta name="og:type" content="website">
+
+
 </head>
 
 <body>
@@ -36,7 +65,7 @@
                         onfocus="showDropdown()" onblur="hideDropdown()">
                     <button><img src="/search.svg" alt="" style='height:50%;'></button>
                 </div>
-                <div class="dropdown" style='max-height:0px;'>
+                <div class="dropdown">
                     <hr />
                     <a href="/flight/BA7351"><strong>BA7351 -</strong> London to Sao Paolo</a>
                     <a href="/flight/AM7004"><strong>AM7004 -</strong> Paris to Prague</a>
@@ -59,7 +88,7 @@
             document.querySelector('.dropdown').style['max-height'] = '0px';
         }
         document.querySelector('form').onsubmit = function (ev) {
-            const flightNumber = ev.target.querySelector('input').value;
+            const flightNumber = ev.target.querySelector('input').value.replace(/[^0-9a-Z]/g, '');
             if (flightNumber.length > 3) {
                 ev.preventDefault();
                 location.href = `/flight/${flightNumber}`;
