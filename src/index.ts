@@ -19,57 +19,87 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(express.static('public'));
+app.set('view engine', 'hbs');
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
+
 const planeData = require('../plane-data.json');
 const { getDistance } = require('../distance.js');
 
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
+app.get('/flight/:flightNumber', asyncHandler(async (req, res) => {
+    const flightNumber = req.params.flightNumber;
+    const data = await calcuateCarbon(flightNumber);
+    const renderData: any = { flightNumber, ...data };
+    renderData.rawJSON = JSON.stringify(renderData);
+
+    res.render('flight', renderData);
+}));
 
 app.get('/flightCarbon/:flightNumber',
     asyncHandler(async (req, res, next) => {
         const flightNumber = req.params.flightNumber;
-        const flights = await getFlights(flightNumber);
+        const data = await calcuateCarbon(flightNumber);
 
-        const pastRows = flights.filter(r => r.scheduled <= Date.now());
-
-        const aircraftName = pastRows[0].aircraft; // TODO: check for specific day
-
-        let aircraft = planeData[aircraftName];
-        if (!aircraft) {
-            const subName = aircraftName.split('-')[0];
-            const aName = Object.keys(planeData).find(key => key.includes(subName));
-            if (aName) {
-                aircraft = planeData[aName];
-            }
-        }
-
-        const [fromCoords, toCoords] = await Promise.all([
-            getCoords(pastRows[0].from),
-            getCoords(pastRows[0].to),
-        ]);
-
-        const distance = getDistance({
-            latitude: fromCoords.lat,
-            longitude: fromCoords.lng,
-        }, {
-                latitude: toCoords.lat,
-                longitude: fromCoords.lng,
-            }
-        );
-
-        console.info(`Point distance [${distance}]`);
-
-        const aircraftFuelBurn = Number(aircraft.fuelBurn.split(' ')[0].replace(/[^0-9\.]/g, ''));
-        const totalFuelBurn = aircraftFuelBurn * distance;
-
-        const passengerFuelBurn = totalFuelBurn / aircraft.seats;
-
-        const passengerCO2 = passengerFuelBurn * 3.16;
-
-        console.log(`PassengerCO2 [${passengerCO2}]`);
-
-        res.send({ passengerCO2 });
-
+        res.send(data);
     })
 );
+
+async function calcuateCarbon(flightNumber: string) {
+    const flights = await getFlights(flightNumber);
+
+    const pastRows = flights.filter(r => r.scheduled <= Date.now());
+
+    const aircraftName = pastRows[0].aircraft; // TODO: check for specific day
+
+    let aircraft = planeData[aircraftName];
+    if (!aircraft) {
+        const subName = aircraftName.split('-')[0];
+        const aName = Object.keys(planeData).find(key => key.includes(subName));
+        if (aName) {
+            aircraft = planeData[aName];
+        }
+    }
+
+    const [fromCoords, toCoords] = await Promise.all([
+        getCoords(pastRows[0].from),
+        getCoords(pastRows[0].to),
+    ]);
+
+    const distance = getDistance({
+        latitude: fromCoords.lat,
+        longitude: fromCoords.lng,
+    }, {
+            latitude: toCoords.lat,
+            longitude: fromCoords.lng,
+        }
+    );
+
+    console.info(`Point distance [${distance}]`);
+
+    const aircraftFuelBurn = Number(aircraft.fuelBurn.split(' ')[0].replace(/[^0-9\.]/g, ''));
+    const totalFuelBurn = aircraftFuelBurn * distance;
+
+    const passengerFuelBurn = totalFuelBurn / aircraft.seats;
+
+    const passengerCO2 = passengerFuelBurn * 3.16;
+
+    console.log(`PassengerCO2 [${passengerCO2}]`);
+
+    return {
+        passengerCO2,
+        passengerFuelBurn,
+        totalFuelBurn,
+        aircraftFuelBurn,
+        distance,
+        fromCoords,
+        toCoords,
+    }
+}
 
 
 async function getCoords(place: string) {
