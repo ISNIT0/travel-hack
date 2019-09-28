@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{flightNumber}} Flight Carbon Calculator</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-swoopy"></script>
+
+
 </head>
 
 <body>
@@ -14,25 +22,54 @@
         <h1>Loading...</h1>
     </div>
     <div class="page" style='display:none;'>
-        <h1>Carbon Footprint: <span class="footprint"></span></h1>
+        <div class='card'>
+            <h1>Carbon Footprint: <span class="footprint"></span>Kg</h1>
+            <code><pre style="text-align: left;">{{rawJSON}}</pre></code>
+
+            <br />
+        </div>
+        <div id="map" style='height:300px;'></div>
+        <br /><br />
+        <h3>Find a low-carbon alternative at <a href="https://www.kiwi.com">kiwi.com</a></h3>
     </div>
     <!-- <h1>Carbon Footprint {{passengerCO2}}</h1> -->
-
-    <pre>{{rawJSON}}</pre>
 </body>
 
 <script>
     async function app() {
         const { flightNumber } = JSON.parse(`{{{rawJSON}}}`);
-        const data = await fetch(`/flightCarbon/${flightNumber}`).then(r => r.json());
+        const data = await fetch(`/api/flight/${flightNumber}`).then(r => r.json());
 
         document.querySelector('.loading').remove();
-        document.querySelector('pre').textContent = JSON.stringify(data, null, '\t')
 
+        document.querySelector('pre').textContent = JSON.stringify(data, null, '\t');
 
-        document.querySelector('.footprint').textContent = data.passengerCO2;
+        document.querySelector('.footprint').textContent = Math.floor(data.passengerCO2);
 
         document.querySelector('.page').style.display = 'block';
+
+        const map = L.map('map').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+
+        const latlngs = [
+            [data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng]
+        ];
+        var polyline = L.polyline(latlngs)
+        // zoom the map to the polyline
+        map.fitBounds(polyline.getBounds());
+
+        const swoopy = L.swoopyArrow([data.fromCoords.lat, data.fromCoords.lng], [data.toCoords.lat, data.toCoords.lng], {
+            color: 'red',
+            arrowFilled: true,
+            opacity: 1,
+            minZoom: 2,
+            maxZoom: 10,
+            factor: .6,
+            iconAnchor: [75, 5],
+            iconSize: [85, 16],
+            weight: 4
+        }).addTo(map);
     }
 
     app();

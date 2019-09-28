@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/flight/:flightNumber', asyncHandler(async (req, res) => {
-    const flightNumber = req.params.flightNumber;
+    const flightNumber = req.params.flightNumber.toUpperCase();
     // const data = await calcuateCarbon(flightNumber);
     const renderData: any = { flightNumber };
     renderData.rawJSON = JSON.stringify(renderData);
@@ -40,7 +40,7 @@ app.get('/flight/:flightNumber', asyncHandler(async (req, res) => {
     res.render('flight', renderData);
 }));
 
-app.get('/flightCarbon/:flightNumber',
+app.get('/api/flight/:flightNumber',
     asyncHandler(async (req, res, next) => {
         const flightNumber = req.params.flightNumber;
         const data = await calcuateCarbon(flightNumber);
