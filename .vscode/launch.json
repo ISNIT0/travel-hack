@@ -17,7 +17,7 @@
                 "tsconfig-paths/register",
                 "-r",
                 "ts-node/register",
-                "index.ts"
+                "src/index.ts"
             ]
         },
         {
@@ -33,7 +33,7 @@
                 "tsconfig-paths/register",
                 "-r",
                 "ts-node/register",
-                "parser.ts"
+                "src/parser.ts"
             ]
         }
     ]

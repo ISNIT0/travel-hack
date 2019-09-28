@@ -1,6 +1,5 @@
 {
     "buildpacks": [
-      { "url": "heroku/nodejs" },
-      { "url": "jontewks/puppeteer" }
+      { "url": "heroku/nodejs" }
     ]
   }
