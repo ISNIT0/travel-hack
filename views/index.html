@@ -18,6 +18,7 @@
 
     <script>
         document.querySelector('form').onsubmit = function (ev) {
+            ev.preventDefault();
             const flightNumber = ev.target.querySelector('input').value;
             location.href = `/flight/${flightNumber}`;
         };
