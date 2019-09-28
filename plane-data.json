@@ -1,0 +1,338 @@
+{
+    "Airbus A330-200": {
+      "seats": 293,
+      "fuelBurn": "5.6 kg/km (19.8 lb/mi)"
+    },
+    "Airbus A330neo-800": {
+      "seats": 248,
+      "fuelBurn": "5.45 kg/km (19.3 lb/mi)"
+    },
+    "Airbus A330neo-900": {
+      "seats": 310,
+      "fuelBurn": "6 kg/km (21 lb/mi)"
+    },
+    "Airbus A340-300": {
+      "seats": 262,
+      "fuelBurn": "6.81 kg/km (24.2 lb/mi)"
+    },
+    "Airbus A350-900": {
+      "seats": 315,
+      "fuelBurn": "7.07 kg/km (25.1 lb/mi)"
+    },
+    "Airbus A380": {
+      "seats": 544,
+      "fuelBurn": "13.78 kg/km (48.9 lb/mi)"
+    },
+    "Boeing 747-400": {
+      "seats": 416,
+      "fuelBurn": "10.77 kg/km (38.2 lb/mi)"
+    },
+    "Boeing 747-8": {
+      "seats": 467,
+      "fuelBurn": "9.9 kg/km (35 lb/mi)"
+    },
+    "Boeing 777-200ER": {
+      "seats": 301,
+      "fuelBurn": "6.96 kg/km (24.7 lb/mi)"
+    },
+    "Boeing 777-200LR": {
+      "seats": 291,
+      "fuelBurn": "7.57 kg/km (26.9 lb/mi)"
+    },
+    "Boeing 777-300ER": {
+      "seats": 344,
+      "fuelBurn": "8.58 kg/km (30.4 lb/mi)"
+    },
+    "Boeing 777-9X": {
+      "seats": 395,
+      "fuelBurn": "9.04 kg/km (32.1 lb/mi)"
+    },
+    "Boeing 787-8": {
+      "seats": 238,
+      "fuelBurn": "5.11 kg/km (18.1 lb/mi)"
+    },
+    "Boeing 787-9": {
+      "seats": 304,
+      "fuelBurn": "5.77 kg/km (20.5 lb/mi)"
+    },
+    "Airbus A320": {
+      "seats": 150,
+      "fuelBurn": "3.13 kg/km (11.1 lb/mi)"
+    },
+    "Airbus A321NeoLR": {
+      "seats": 154,
+      "fuelBurn": "2.99 kg/km (10.6 lb/mi)"
+    },
+    "Airbus A330-300": {
+      "seats": 262,
+      "fuelBurn": "6.25 kg/km (22.2 lb/mi)"
+    },
+    "Boeing 737 MAX-8": {
+      "seats": 162,
+      "fuelBurn": "2.71 kg/km (9.6 lb/mi)"
+    },
+    "Boeing 737 MAX-9": {
+      "seats": 180,
+      "fuelBurn": "2.91 kg/km (10.3 lb/mi)"
+    },
+    "Boeing 757-200W": {
+      "seats": 158,
+      "fuelBurn": "3.79 kg/km (13.4 lb/mi)"
+    },
+    "Boeing 767-200ER": {
+      "seats": 224,
+      "fuelBurn": "4.93 kg/km (17.5 lb/mi)"
+    },
+    "Boeing 767-300ER": {
+      "seats": 269,
+      "fuelBurn": "5.51 kg/km (19.5 lb/mi)"
+    },
+    "Boeing 767-400ER": {
+      "seats": 304,
+      "fuelBurn": "5.92 kg/km (21 lb/mi)"
+    },
+    "Boeing 777-200": {
+      "seats": 305,
+      "fuelBurn": "6.83 kg/km (24.2 lb/mi)"
+    },
+    "Boeing 777-300": {
+      "seats": 368,
+      "fuelBurn": "7.88 kg/km (28.0 lb/mi)"
+    },
+    "Irkut MC-21": {
+      "seats": 163,
+      "fuelBurn": "3.04 kg/km (10.8 lb/mi)"
+    },
+    "Airbus A319": {
+      "seats": 124,
+      "fuelBurn": "2.93 kg/km (10.4 lb/mi)"
+    },
+    "Airbus A319Neo": {
+      "seats": 136,
+      "fuelBurn": "2.4 kg/km (8.6 lb/mi)"
+    },
+    "Airbus A321-200": {
+      "seats": 180,
+      "fuelBurn": "3.61 kg/km (12.8 lb/mi)"
+    },
+    "Antonov An-148 (1190 nmi)": {
+      "seats": 89,
+      "fuelBurn": "2.75 kg/km (9.8 lb/mi)"
+    },
+    "Antonov An-158 (1190 nmi)": {
+      "seats": 99,
+      "fuelBurn": "2.83 kg/km (10.0 lb/mi)"
+    },
+    "Boeing 737-600": {
+      "seats": 110,
+      "fuelBurn": "3.16 kg/km (11.2 lb/mi)"
+    },
+    "Boeing 737-700": {
+      "seats": 126,
+      "fuelBurn": "3.21 kg/km (11.4 lb/mi)"
+    },
+    "Boeing 737 MAX-7": {
+      "seats": 140,
+      "fuelBurn": "2.51 kg/km (8.91 lb/mi)"
+    },
+    "Boeing 737-800": {
+      "seats": 162,
+      "fuelBurn": "3.59 kg/km (12.7 lb/mi)"
+    },
+    "Boeing 737-800W": {
+      "seats": 162,
+      "fuelBurn": "3.18 kg/km (11.3 lb/mi)"
+    },
+    "Boeing 737-900ER": {
+      "seats": 180,
+      "fuelBurn": "3.83 kg/km (13.6 lb/mi)"
+    },
+    "Boeing 737-900ERW": {
+      "seats": 180,
+      "fuelBurn": "3.42 kg/km (12.1 lb/mi)"
+    },
+    "Boeing 757-200": {
+      "seats": 200,
+      "fuelBurn": "4.68 kg/km (16.61 lb/mi)"
+    },
+    "Boeing 757-300": {
+      "seats": 243,
+      "fuelBurn": "5.19 kg/km (18.41 lb/mi)"
+    },
+    "Airbus A220-100": {
+      "seats": 125,
+      "fuelBurn": "2.57 kg/km (9.1 lb/mi)"
+    },
+    "Airbus A220-300": {
+      "seats": 160,
+      "fuelBurn": "2.85 kg/km (10.11 lb/mi)"
+    },
+    "Quest Kodiak": {
+      "seats": 9,
+      "fuelBurn": "0.71 kg/km (2.52 lb/mi)"
+    },
+    "Airbus A319neo": {
+      "seats": 124,
+      "fuelBurn": "2.82 kg/km (10 lb/mi)"
+    },
+    "Airbus A320neo": {
+      "seats": 154,
+      "fuelBurn": "2.79 kg/km (9.9 lb/mi)"
+    },
+    "Airbus A321neo": {
+      "seats": 192,
+      "fuelBurn": "3.30 kg/km (11.7 lb/mi)"
+    },
+    "Antonov An-148": {
+      "seats": 89,
+      "fuelBurn": "2.89 kg/km (10.3 lb/mi)"
+    },
+    "Antonov An-158": {
+      "seats": 99,
+      "fuelBurn": "3 kg/km (11 lb/mi)"
+    },
+    "Boeing 737-300": {
+      "seats": 126,
+      "fuelBurn": "3.49 kg/km (12.4 lb/mi)"
+    },
+    "Boeing 737 MAX 7": {
+      "seats": 144,
+      "fuelBurn": "3.39 kg/km (12.01 lb/mi)"
+    },
+    "Boeing 737 MAX 8": {
+      "seats": 166,
+      "fuelBurn": "3.04 kg/km (10.8 lb/mi)"
+    },
+    "Boeing 737 MAX 9": {
+      "seats": 180,
+      "fuelBurn": "3.30 kg/km (11.7 lb/mi)"
+    },
+    "Bombardier CRJ100": {
+      "seats": 50,
+      "fuelBurn": "2.21 kg/km (7.83 lb/mi)"
+    },
+    "Bombardier CRJ200": {
+      "seats": 50,
+      "fuelBurn": "2.18 kg/km (7.73 lb/mi)"
+    },
+    "Bombardier CRJ700": {
+      "seats": 70,
+      "fuelBurn": "2.95 kg/km (10.47 lb/mi)"
+    },
+    "Bombardier CRJ900": {
+      "seats": 88,
+      "fuelBurn": "3.47 kg/km (12.31 lb/mi)"
+    },
+    "Bombardier CRJ1000": {
+      "seats": 100,
+      "fuelBurn": "2.66 kg/km (9.4 lb/mi)"
+    },
+    "Airbus A220 100": {
+      "seats": 115,
+      "fuelBurn": "2.8 kg/km (10.1 lb/mi)"
+    },
+    "Airbus A220 300": {
+      "seats": 140,
+      "fuelBurn": "3.10 kg/km (11.01 lb/mi)"
+    },
+    "Bombardier Dash 8 Q400": {
+      "seats": 78,
+      "fuelBurn": "2.16 kg/km (7.7 lb/mi)"
+    },
+    "Dornier 328": {
+      "seats": 32,
+      "fuelBurn": "1.22 kg/km (4.3 lb/mi)"
+    },
+    "Embraer E-Jet E2-175": {
+      "seats": 88,
+      "fuelBurn": "2.44 kg/km (8.64 lb/mi)"
+    },
+    "Embraer E-Jet E2-190": {
+      "seats": 106,
+      "fuelBurn": "2.83 kg/km (10.04 lb/mi)"
+    },
+    "Embraer E-Jet E2-195": {
+      "seats": 132,
+      "fuelBurn": "3.07 kg/km (10.91 lb/mi)"
+    },
+    "Embraer E-Jet-170": {
+      "seats": 80,
+      "fuelBurn": "2.6 kg/km (9.3 lb/mi)"
+    },
+    "Embraer E-Jet-175": {
+      "seats": 88,
+      "fuelBurn": "2.80 kg/km (9.95 lb/mi)"
+    },
+    "Embraer E-Jet-190": {
+      "seats": 114,
+      "fuelBurn": "3.24 kg/km (11.48 lb/mi)"
+    },
+    "Embraer E-Jet-195": {
+      "seats": 122,
+      "fuelBurn": "3.21 kg/km (11.38 lb/mi)"
+    },
+    "Embraer ERJ-135ER": {
+      "seats": 37,
+      "fuelBurn": "1.44 kg/km (5.12 lb/mi)"
+    },
+    "Embraer ERJ-145ER": {
+      "seats": 50,
+      "fuelBurn": "1.55 kg/km (5.49 lb/mi)"
+    },
+    "Pilatus PC-12": {
+      "seats": 9,
+      "fuelBurn": "0.41 kg/km (1.5 lb/mi)"
+    },
+    "Saab 340": {
+      "seats": 32,
+      "fuelBurn": "1.1 kg/km (3.9 lb/mi)"
+    },
+    "Saab 2000": {
+      "seats": 50,
+      "fuelBurn": "1.75 kg/km (6.2 lb/mi)"
+    },
+    "Sukhoi SSJ100": {
+      "seats": 98,
+      "fuelBurn": "2.81 kg/km (10.0 lb/mi)"
+    },
+    "Xian MA700": {
+      "seats": 78,
+      "fuelBurn": "1.69 kg/km (6.0 lb/mi)"
+    },
+    "Antonov An-148 (241 nmi)": {
+      "seats": 89,
+      "fuelBurn": "4.23 kg/km (15.0 lb/mi)"
+    },
+    "Antonov An-158 (241 nmi)": {
+      "seats": 99,
+      "fuelBurn": "4.34 kg/km (15.4 lb/mi)"
+    },
+    "ATR 42-500": {
+      "seats": 48,
+      "fuelBurn": "1.26 kg/km (4.5 lb/mi)"
+    },
+    "ATR 72-500": {
+      "seats": 70,
+      "fuelBurn": "1.42 kg/km (5.0 lb/mi)"
+    },
+    "Beechcraft 1900D (226 nm)": {
+      "seats": 19,
+      "fuelBurn": "1.00 kg/km (3.56 lb/mi)"
+    },
+    "Dornier 228": {
+      "seats": 19,
+      "fuelBurn": "0.94 kg/km (3.3 lb/mi)"
+    },
+    "Embraer Brasilia": {
+      "seats": 30,
+      "fuelBurn": "0.92 kg/km (3.3 lb/mi)"
+    },
+    "Embraer ERJ-135ER (309 nmi)": {
+      "seats": 37,
+      "fuelBurn": "1.64 kg/km (5.83 lb/mi)"
+    },
+    "Embraer ERJ-145ER (305 nmi)": {
+      "seats": 50,
+      "fuelBurn": "1.76 kg/km (6.23 lb/mi)"
+    }
+  }
