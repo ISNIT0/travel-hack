@@ -23,7 +23,7 @@ const planeData = require('../plane-data.json');
 const { getDistance } = require('../distance.js');
 
 
-app.get('/:flightNumber',
+app.get('/flightCarbon/:flightNumber',
     asyncHandler(async (req, res, next) => {
         const flightNumber = req.params.flightNumber;
         const flights = await getFlights(flightNumber);
