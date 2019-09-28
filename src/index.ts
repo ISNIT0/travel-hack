@@ -41,8 +41,10 @@ app.get('/:flightNumber',
             }
         }
 
-        const fromCoords = await getCoords(pastRows[0].from);
-        const toCoords = await getCoords(pastRows[0].to);
+        const [fromCoords, toCoords] = await Promise.all([
+            getCoords(pastRows[0].from),
+            getCoords(pastRows[0].to),
+        ]);
 
         const distance = getDistance({
             latitude: fromCoords.lat,
