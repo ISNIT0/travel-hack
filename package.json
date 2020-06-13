@@ -7,6 +7,9 @@
     "start": "node build/index.js",
     "build": "tsc"
   },
+	"engines": {
+		"node": "10.18.1"
+	},
   "author": "",
   "license": "ISC",
   "dependencies": {
