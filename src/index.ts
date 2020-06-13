@@ -132,8 +132,8 @@ async function getCoords(place: string) {
 }
 
 
-// (async () => {
-//     const port = process.env.PORT || 12180;
-//     app.listen(port);
-//     console.log('Listening on port', port);
-// })().catch((e) => console.error(e.stack));
+(async () => {
+    const port = process.env.PORT || 12180;
+    app.listen(port);
+    console.log('Listening on port', port);
+})().catch((e) => console.error(e.stack));
